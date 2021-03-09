@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 elements to &apos;LeetCodeProblems/src/bipartite_graph&apos;&#x0D;&#x0A;- Original project: &apos;BipartiteGraph&apos;&#x0D;&#x0A;- Destination element: &apos;LeetCodeProblems/src/bipartite_graph&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     Runner.java&#x0D;&#x0A;     Color.java&#x0D;&#x0A;     Solution.java" description="Copy compilation units" destination="=LeetCodeProblems/src&lt;bipartite_graph" element1="/src&lt;{Runner.java" element2="/src&lt;{Color.java" element3="/src&lt;{Solution.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1615084013589" units="3" version="1.0"/>
+</session>

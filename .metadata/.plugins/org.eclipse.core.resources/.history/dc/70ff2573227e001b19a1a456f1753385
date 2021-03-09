@@ -1,0 +1,10 @@
+package average_of_levels_in_binary_tree;
+
+public class Runner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

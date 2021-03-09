@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+E:\Workspace\Sprig Tool Workspace\.metadata\.plugins\org.eclipse.jdt.core
+3291345932.index
+2774740330.index

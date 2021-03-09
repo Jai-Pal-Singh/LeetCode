@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="Solution"/>
+    <fullyQualifiedTypeName name="java.util.Queue"/>
+    <fullyQualifiedTypeName name="java.util.LinkedList"/>
+    <fullyQualifiedTypeName name="Color"/>
+    <fullyQualifiedTypeName name="k_weakest_matrix_rows.Solution"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.util.Stack"/>
+    <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+    <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
+    <fullyQualifiedTypeName name="java.util.stream.Collector"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="com.sun.org.apache.xerces.internal.impl.xpath.regex.REUtil"/>
+    <fullyQualifiedTypeName name="min_remove_to_make_valid.Solution"/>
+    <fullyQualifiedTypeName name="partition_equal_subset_sum.Solution"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.Collections"/>
+    <fullyQualifiedTypeName name="org.graalvm.compiler.word.Word"/>
+    <fullyQualifiedTypeName name="longest_word_in_dictionary_through_deleting.Solution"/>
+    <fullyQualifiedTypeName name="search_a_2D_matrix.Solution"/>
+    <fullyQualifiedTypeName name="shortest_unsorted_continuous_subarray.Solution"/>
+    <fullyQualifiedTypeName name="missing_number.Solution"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+</qualifiedTypeNameHistroy>

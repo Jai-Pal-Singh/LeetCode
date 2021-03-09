@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 4 elements to &apos;Learn/src/stack_with_linked_list&apos;&#x0D;&#x0A;- Original project: &apos;StackWithLinkedList&apos;&#x0D;&#x0A;- Destination element: &apos;Learn/src/stack_with_linked_list&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     MainClass.java&#x0D;&#x0A;     Stack.java&#x0D;&#x0A;     LinkedList.java&#x0D;&#x0A;     Node.java" description="Copy compilation units" destination="=Learn/src&lt;stack_with_linked_list" element1="/src&lt;{MainClass.java" element2="/src&lt;{Stack.java" element3="/src&lt;{LinkedList.java" element4="/src&lt;{Node.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1615083890457" units="4" version="1.0"/>
+</session>

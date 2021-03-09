@@ -1,0 +1,20 @@
+package average_of_levels_in_binary_tree;
+
+import java.util.List;
+
+public class Runner {
+
+	public static void main(String[] args) {
+		TreeNode root = new TreeNode();
+		root.val = 3;
+		root.left.val = 9;
+		root.right.val = 20;
+		root.right.left.val = 15;
+		root.right.right.val = 7;
+		
+		Solution s = new Solution();
+		List<Double> result = s.averageOfLevels(root);
+		result.stream().forEach(System.out::println);
+	}
+
+}
