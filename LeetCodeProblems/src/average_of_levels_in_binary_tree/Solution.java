@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Queue;
 
 /**
- * @author hp
+ * @author Jai Pal Singh
  * @implNote Given a non-empty binary tree, return the average value of the nodes on each level in the form of an array.
 Example 1:
 Input:
@@ -24,7 +24,8 @@ public class Solution {
 	public List<Double> averageOfLevels(TreeNode root) {
         List<Double> result = new LinkedList<Double>();
         TreeNode temp = root;
-        Queue<TreeNode>[] q= new Queue[2];
+        @SuppressWarnings("unchecked")
+		Queue<TreeNode>[] q= new Queue[2];
 		q[0] = new LinkedList<TreeNode>(); 
 		q[1] = new LinkedList<TreeNode>();
         q[0].add(temp);
