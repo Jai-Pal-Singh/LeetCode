@@ -1,7 +1,6 @@
 package two_sum;
 
 import java.util.HashMap;
-import java.util.Map;
 
 // Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
@@ -50,7 +49,7 @@ import java.util.Map;
 
 public class Solution2 {
     public int[] twoSum(int[] nums, int target) {
-        Map<Integer, Integer> numsMap = new HashMap<>();
+        HashMap<Integer, Integer> numsMap = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             if(numsMap.containsKey(target - nums[i])){
                 return new int[]{i, numsMap.get(target - nums[i])};
