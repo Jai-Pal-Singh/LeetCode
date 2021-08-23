@@ -13,4 +13,14 @@ public class ArrayFunctions {
             System.out.println(Arrays.toString(num));
         }       
     }
+
+    public static void print(char[] s){
+        System.out.println(Arrays.toString(s));
+    }
+
+    public static void print(char[][] s){
+        for (char[] c : s) {
+            System.out.println(Arrays.toString(c));
+        }       
+    }
 }
