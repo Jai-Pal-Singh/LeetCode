@@ -30,6 +30,6 @@ public class Runner {
         l2.next.next.next = new ListNode(9);
 
         ListNode result = sol.addTwoNumbers(l1, l2);
-        result.print(result);
+        ListNode.print(result);
     }
 }

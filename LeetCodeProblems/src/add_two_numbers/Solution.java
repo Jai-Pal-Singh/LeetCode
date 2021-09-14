@@ -56,7 +56,7 @@ public class Solution {
             while(l1.next!=null ){
                 l1 = l1.next;
 
-                ListNode temp = new ListNode();
+                ListNode temp =new ListNode();
                 temp.val = (carry + l1.val)%10;
                 carry = (carry + l1.val)/10;
 
