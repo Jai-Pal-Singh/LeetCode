@@ -1,0 +1,60 @@
+Magical Sequence
+You’re given a sequence of digits. Find the count of all contiguous subsequences that make a magical sequence. A magical sequence passes the following test:
+
+From the last digit, and moving left, double the value of every alternate digit. If the result of this operation is two digit number, then add the digits (e.g., 18: 1 + 8 = 9).
+
+Sum up all the digits.
+
+Resultant sum is divisible by 10.
+
+Input Format
+The first line of input consists of an integer t denoting the number of test cases. The first line of each test case contains the length of the sequence d. This is followed by a sequence containing d digits.
+
+Output Format
+For each case output the count of all magical sequences.
+
+Constraints
+1 <= t <= 1000
+
+1 <= d <= 1000
+
+Sample Input
+8
+1
+1
+1
+0
+4
+0000
+10
+1234567890
+29
+41201953788963824033556555672
+7
+3000158
+11
+90540677470
+36
+188648824429847292479287385561746664
+Sample Output
+0
+1
+10
+7
+38
+10
+7
+60
+Explanation
+The sequence 1234567890 has 55 contiguous subsequences out of which only the following 7 are magical
+
+2345
+234567
+34
+345678
+5678
+67
+0
+img
+
+img
