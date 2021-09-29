@@ -2,7 +2,7 @@ package construct_binary_tree_from_inorder_postorder_traversal;
 
 import java.util.Objects;
 
-import main.TreeNode;
+import helper_binary_tree.TreeNode;
 /*
 
 Construct Binary Tree from Inorder and Postorder Traversal

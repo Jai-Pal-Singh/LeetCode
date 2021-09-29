@@ -2,7 +2,7 @@ package add_one_row_to_tree;
 
 import java.util.Objects;
 
-import main.TreeNode;
+import helper_binary_tree.TreeNode;
 /*
 
 Add One Row to Tree

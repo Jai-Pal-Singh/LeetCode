@@ -1,6 +1,6 @@
 package add_one_row_to_tree;
 
-import main.TreeNode;
+import helper_binary_tree.TreeNode;
 
 public class Runner {
     public static void main(String[] args) {

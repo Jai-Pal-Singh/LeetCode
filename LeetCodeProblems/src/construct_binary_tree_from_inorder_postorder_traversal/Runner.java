@@ -1,6 +1,6 @@
 package construct_binary_tree_from_inorder_postorder_traversal;
 
-import main.TreeNode;
+import helper_binary_tree.TreeNode;
 
 public class Runner {
     public static void main(String[] args) {
