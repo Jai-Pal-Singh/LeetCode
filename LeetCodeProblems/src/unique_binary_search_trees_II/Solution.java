@@ -26,6 +26,8 @@ import helper_binary_tree.TreeNode;
 
 // I start by noting that 1..n is the in-order traversal for any BST with nodes 1 to n. So if I pick i-th node as my root, the left subtree will contain elements 1 to (i-1), and the right subtree will contain elements (i+1) to n. I use recursive calls to get back all possible trees for left and right subtrees and combine them in all possible ways with the root.
 public class Solution {
+
+    @SuppressWarnings("unchecked")
     public List<TreeNode> generateTrees(int n) {
         List<TreeNode>[] result = new List[n + 1];
         result[0] = new ArrayList<TreeNode>();
