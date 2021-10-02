@@ -27,7 +27,7 @@ import java.util.List;
 public class Solution {
 
     public List<Integer> getRow(int rowIndex) {
-        List<Integer> ans = new ArrayList<Integer>(rowIndex + 1);
+        List<Integer> ans = new ArrayList<>(rowIndex + 1);
         for (int i = 0; i <= rowIndex; i++) {
             ans.add(i, getPascalTriangleValue(rowIndex, i));
         }
@@ -37,7 +37,7 @@ public class Solution {
     private Integer getPascalTriangleValue(Integer row, Integer column) {
         if (row == 0)
             return 1;
-        if (column == 0 || column == row)
+        if (column == 0 || column.equals(row))
             return 1;
         return getPascalTriangleValue(row - 1, column - 1) + getPascalTriangleValue(row - 1, column);
     }
