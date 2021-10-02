@@ -1,5 +1,7 @@
 package helper_binary_tree;
 
+import java.util.List;
+
 //Definition for a binary tree node.
 public class TreeNode {
 	public int val;
@@ -20,11 +22,20 @@ public class TreeNode {
         return Math.max(height(root.left), height(root.right)) + 1;
     }
 
-	public static void print(TreeNode root){
+	public static void print(List<TreeNode> treeNodes){
+        for (TreeNode treeNode : treeNodes) {
+            print(treeNode);
+        }
+	}
+
+    public static void print(TreeNode root){
         // printGivenLevel(root);
 		int h = height(root);
-        for (int i=1; i<=h; i++)
+        System.out.print("[");
+        for (int i=1; i<=h; i++){
             printGivenLevel(root, i);
+        }
+        System.out.println("]");
 	}
 
 	public static void printGivenLevel (TreeNode root ,int level) {
