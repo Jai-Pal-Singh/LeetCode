@@ -56,6 +56,6 @@ public class Solution2 {
             }
             numsMap.put(nums[i], i);
         }
-        return null;
+        return new int[]{};
     }
 }
