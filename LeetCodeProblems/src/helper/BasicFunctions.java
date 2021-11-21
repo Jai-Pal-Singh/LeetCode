@@ -15,4 +15,8 @@ public class BasicFunctions {
     public static void print(int num){
         logger.log(Level.INFO, OUTPUT_STRING, num);
     }
+
+    public static void print(String str){
+        logger.log(Level.INFO, OUTPUT_STRING, str);
+    }
 }

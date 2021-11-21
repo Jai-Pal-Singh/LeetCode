@@ -14,6 +14,5 @@ public class Solution2 {
             start++; end--;
             reverseString(s, start, end);
         }
-        else return;
     }
 }
