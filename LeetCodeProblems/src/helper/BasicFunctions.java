@@ -16,6 +16,10 @@ public class BasicFunctions {
         logger.log(Level.INFO, OUTPUT_STRING, num);
     }
 
+    public static void print(boolean num){
+        logger.log(Level.INFO, OUTPUT_STRING, num);
+    }
+
     public static void print(String str){
         logger.log(Level.INFO, OUTPUT_STRING, str);
     }
