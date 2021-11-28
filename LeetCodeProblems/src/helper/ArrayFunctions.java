@@ -1,6 +1,7 @@
 package helper;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -15,6 +16,10 @@ public class ArrayFunctions {
 
     public static void print(int[] nums){
         logger.log(Level.INFO, OUTPUT_STRING, Arrays.toString(nums));
+    }
+
+    public static void print(List<Integer> nums){
+        logger.log(Level.INFO, OUTPUT_STRING, nums.toString());
     }
 
     public static void print(int[][] nums){
