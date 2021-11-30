@@ -1,5 +1,6 @@
 package helper;
 
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -22,5 +23,9 @@ public class BasicFunctions {
 
     public static void print(String str){
         logger.log(Level.INFO, OUTPUT_STRING, str);
+    }
+
+    public static void print(Map<Character, Integer> map) {
+        logger.log(Level.INFO, OUTPUT_STRING, map.toString());
     }
 }
