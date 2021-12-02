@@ -32,6 +32,12 @@ public class ArrayFunctions {
         }       
     }
 
+    public static void printList(List<List<Integer>> nums) {
+        for (List<Integer> num : nums) {
+            print(num);
+        }
+    }
+
     public static void print(char[] s){
         logger.log(Level.INFO, OUTPUT_STRING, Arrays.toString(s));
     }
