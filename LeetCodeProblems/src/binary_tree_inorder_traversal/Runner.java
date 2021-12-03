@@ -1,4 +1,4 @@
-package binary_tree_preorder_traversal;
+package binary_tree_inorder_traversal;
 
 import helper_binary_tree.TreeNode;
 
@@ -19,6 +19,6 @@ public class Runner {
         root.right.left.right = new TreeNode(13);
         root.right.right.left = new TreeNode(14);
         root.right.right.right = new TreeNode(15);
-        helper.ArrayFunctions.print(new Solution().preorderTraversal(root));
+        helper.ArrayFunctions.print(new Solution().inorderTraversal(root));
     }
 }
