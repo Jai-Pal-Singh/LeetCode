@@ -1,7 +1,5 @@
 package search_a_2D_matrix;
 
-import java.util.Arrays;
-
 /**
  * @author hp
  * @implNote Write an efficient algorithm that searches for a target value in an
@@ -34,36 +32,40 @@ import java.util.Arrays;
  * 
  */
 public class Solution {
-
 	public boolean searchMatrix(int[][] matrix, int target) {
-        int m = matrix.length-1;
-        int i= 0;
-        while(i<=m && target>=matrix[i][0]) {
-        	int index = Arrays.binarySearch(matrix[i], target);
-        	System.out.println("arr[i][0] : "+matrix[i][0] + " ; index : "+index);
-        	if (index >= 0) return true;
-        	i++;
-        }
+		int row = searchRows(matrix, target, 0, matrix.length);
+		if (row != -1)
+			return searchColumns(matrix[row], target, 0, matrix[row].length);
 		return false;
-    }
-	
-//	int binarySearch(int arr[][], int l, int r, int x) 
-//    { 
-//        if (r>=l) 
-//        { 
-//            int mid = l + (r - l)/2; 
-//            System.out.println("mid : "+mid);
-//            int index = Arrays.binarySearch(arr[mid], x);
-//            if (index >= 0) 
-//               return mid; 
-////            if ((mid < arr[mid].length) &&(arr[mid][0] > x)) 
-//            System.out.println("arr[0][mid] : "+arr[0][mid]);
-//            System.out.println("arr[mid][0] : "+arr[mid][0]);
-//            if ((arr[mid][0] < x)) 
-//               return binarySearch(arr, l, mid-1, x); 
-//  
-//            return binarySearch(arr, mid+1, r, x); 
-//        } 
-//        return -1; 
-//    }
+	}
+
+	public int searchRows(int[][] matrix, int target, int start, int end) {
+		if (start <= end) {
+			int mid = start + (end - start - 1) / 2;
+			if (mid >= matrix.length)
+				return -1;
+			if (target >= matrix[mid][0] && target <= matrix[mid][matrix[mid].length - 1]) {
+				return mid;
+			} else if (target < matrix[mid][0]) {
+				return searchRows(matrix, target, start, mid - 1);
+			} else {
+				return searchRows(matrix, target, mid + 1, end);
+			}
+		}
+		return -1;
+	}
+
+	public boolean searchColumns(int[] matrix, int target, int start, int end) {
+		if (start <= end) {
+			int mid = start + (end - start - 1) / 2;
+			if (target == matrix[mid]) {
+				return true;
+			} else if (target < matrix[mid]) {
+				return searchColumns(matrix, target, start, mid - 1);
+			} else {
+				return searchColumns(matrix, target, mid + 1, end);
+			}
+		}
+		return false;
+	}
 }
