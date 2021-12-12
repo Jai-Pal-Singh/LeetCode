@@ -17,12 +17,11 @@ public class Solution {
         Integer length = S.length();
         List<String> permutations = new ArrayList<>();
         permutations.add(S);
-        permutations = generatePermutations(S, 0, length, permutations);
-//        permutations.stream().forEach(System.out::println);
+        generatePermutations(S, length, permutations);
 		return permutations;
     }
 
-	private List<String> generatePermutations(String s, Integer startIndex, Integer length, List<String> permutations) {
+	private void generatePermutations(String s, Integer length, List<String> permutations) {
 		for(int i = 0; i<length; i++) {
 			if(Character.isDigit(s.charAt(i))) {
 				continue;
@@ -35,16 +34,10 @@ public class Solution {
 				tempList.add(lowerCaseString);
 				tempList.add(upperCaseString);
 			}
-//			System.out.println("TempList elements : ");
-//			tempList.stream().forEach(System.out::println);
-//			System.out.println("Permutation elements : ");
-//			permutations.stream().forEach(System.out::println);
-			System.out.println();
 			permutations.clear();
 			permutations.addAll(tempList);
 			tempList.clear();
 		}
-		return permutations;
 	}
 
 	private String getUpperCaseString(String letter, int index, Integer length) {

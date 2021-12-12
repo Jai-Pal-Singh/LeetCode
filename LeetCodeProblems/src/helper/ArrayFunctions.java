@@ -26,6 +26,10 @@ public class ArrayFunctions {
         logger.log(Level.INFO, OUTPUT_STRING, nums.toString());
     }
 
+    public static void printListString(List<String> str) {
+        logger.log(Level.INFO, OUTPUT_STRING, str.toString());
+    }
+
     public static void print(int[][] nums){
         for (int[] num : nums) {
             logger.log(Level.INFO, OUTPUT_STRING, Arrays.toString(num));
