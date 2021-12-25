@@ -49,8 +49,10 @@ The number of nodes in the tree is in the range [0, 2000].
  */
 
 public class Solution {
+
+    @SuppressWarnings("unchecked")
     public List<List<Integer>> levelOrder(TreeNode root) {
-        Queue<TreeNode>[] q = new Queue[2];
+        Queue<TreeNode>[] q = new LinkedList[2];
         q[0] = new LinkedList<>();
         q[1] = new LinkedList<>();
         List<List<Integer>> result = new ArrayList<>();

@@ -37,7 +37,7 @@ public class Dictionary {
                 }
 
             } catch (Exception e) {
-                // TODO: handle exception
+                e.printStackTrace();
             }
 
         }
