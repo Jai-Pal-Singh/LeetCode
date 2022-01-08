@@ -1,58 +1,80 @@
 package shortest_path_in_binary_matrix;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+// Given an n x n binary matrix grid, return the length of the shortest clear path in the matrix. If there is no clear path, return -1.
+
+// A clear path in a binary matrix is a path from the top-left cell (i.e., (0, 0)) to the bottom-right cell (i.e., (n - 1, n - 1)) such that:
+
+// All the visited cells of the path are 0.
+// All the adjacent cells of the path are 8-directionally connected (i.e., they are different and they share an edge or a corner).
+// The length of a clear path is the number of visited cells of this path.
+
+ 
+
+// Example 1:
+
+
+// Input: grid = [[0,1],[1,0]]
+// Output: 2
+// Example 2:
+
+
+// Input: grid = [[0,0,0],[1,1,0],[1,1,0]]
+// Output: 4
+// Example 3:
+
+// Input: grid = [[1,0,0],[1,1,0],[1,1,0]]
+// Output: -1
+ 
+
+// Constraints:
+
+// n == grid.length
+// n == grid[i].length
+// 1 <= n <= 100
+// grid[i][j] is 0 or 1
+
 public class Solution {
+	private int dir[][] = new int[][]{{0,1},{0,-1},{1,0},{-1,0},{1,-1},{-1,1},{-1,-1},{1,1}};
 
-	public int shortestPathBinaryMatrix(int[][] grid) {
-		int length = grid[0].length;
-		System.out.println("length : " + length);
-		int shortestPath = findShortestPath(grid, -1, -1, 0, 0, length);
-		System.out.println("shortestPath : " + shortestPath);
-		return shortestPath;
-	}
+    public int shortestPathBinaryMatrix(int[][] grid) {
 
-	private int findShortestPath(int[][] grid, int px, int py, int x, int y, int length) {
-		if (x == length - 1 && y == length - 1) {
-			System.out.println("Reached end point");
-			return 1;
-		}
-		System.out.println("(New x, New y) : (" + x + " , " + y + ")");
-		int shortestPath = 10000;
-		int[] gradients = { -1, 0, 1 };
-		for (int i = 0; i < 3; i++) {
-			for (int j = 0; j < 3; j++) {
-				if (isLocationCorrect(grid, px, py, x, y, length, x + gradients[i], y + gradients[j])) {
-					grid[x][y] = 2;
-					int routeLength = findShortestPath(grid, x, y, x + gradients[i], y + gradients[j], length);
-					shortestPath = shortestPath < routeLength ? shortestPath : routeLength;
-//                    System.out.println("New shortest path : " + shortestPath);
-//                    System.out.println("route length : " + routeLength);
-				}
-			}
-		}
-		return shortestPath + 1;
-	}
+        int m = grid.length;
+        int n = grid[0].length;
 
-	private boolean isLocationCorrect(int[][] grid, int px, int py, int x, int y, int length, int nx, int ny) {
-//		System.out.print("(Parent x, Parent y) : (" + px + " , " + py + "), ");
-//		System.out.print("(x, y) : (" + x + " , " + y + "), ");
-//		System.out.println("(New x, New y) : (" + nx + " , " + ny + ")");
-		if (nx == px && ny == py) {
-//			System.out.println("Cond 1");
-			return false;
-		} else if (nx == x && ny == y) {
-//			System.out.println("Cond 2");
-			return false;
-		} else if (nx < 0 || nx >= length) {
-//			System.out.println("Cond 3");
-			return false;
-		} else if (ny < 0 || ny >= length) {
-//			System.out.println("Cond 4");
-			return false;
-		} else if (grid[x][y] == 2 || grid[nx][ny] == 1 || grid[nx][ny] == 2) {
-//        	System.out.println("Cond 5");
-			return false;
-		} else {
-//        	System.out.println("Cond true. grid[nx][ny] : " + grid[nx][ny]);
-			return true;
-		}
+        if(grid[0][0]==1 || grid[m-1][n-1]==1) {
+            return -1;
+        }
+
+        boolean[][] visited = new boolean[m][n];
+        visited[0][0] = true;
+        Queue<int[]> queue = new LinkedList<>();
+        queue.add(new int[]{0,0});
+
+        int ans=0;
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            for(int i=0;i<size;i++) {
+                int[] pop = queue.remove();
+                if(pop[0]==m-1 && pop[1]==n-1) {
+                    return ans+1;
+                }
+                for (int k=0;k<8;k++) {
+                    int nextX = dir[k][0]+pop[0];
+                    int nextY = dir[k][1]+pop[1];
+
+                    if(nextX>=0 && nextX<m && nextY>=0 && nextY<n && !visited[nextX][nextY] && grid[nextX][nextY]==0) {
+                        queue.add(new int[]{nextX,nextY});
+                        visited[nextX][nextY]=true;
+                    }
+
+                }
+            }
+            ans++;
+        }
+
+        return -1;
 	}
 }
