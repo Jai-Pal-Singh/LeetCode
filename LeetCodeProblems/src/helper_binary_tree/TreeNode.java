@@ -1,6 +1,7 @@
 package helper_binary_tree;
 
 import java.util.List;
+import java.util.Objects;
 
 //Definition for a binary tree node.
 public class TreeNode {
@@ -25,6 +26,23 @@ public class TreeNode {
 	public static void print(List<TreeNode> treeNodes){
         for (TreeNode treeNode : treeNodes) {
             print(treeNode);
+        }
+	}
+
+    public static void printList(List<TreeNode> treeNodes){
+        System.out.print("TreeNode list: ");
+        for (TreeNode treeNode : treeNodes) {
+            System.out.print(treeNode.val + " ");
+        }
+        System.out.println();
+	}
+
+    public static void printNode(TreeNode root){
+        if (Objects.isNull(root)) {
+            System.out.println("null");
+        }
+        else {
+            System.out.println("TreeNode: " + root.val);
         }
 	}
 
