@@ -18,6 +18,10 @@ public class ArrayFunctions {
         logger.log(Level.INFO, OUTPUT_STRING, Arrays.toString(nums));
     }
 
+    public static void print(double[] nums){
+        logger.log(Level.INFO, OUTPUT_STRING, Arrays.toString(nums));
+    }
+
     public static void print(boolean[] nums){
         logger.log(Level.INFO, OUTPUT_STRING, Arrays.toString(nums));
     }
