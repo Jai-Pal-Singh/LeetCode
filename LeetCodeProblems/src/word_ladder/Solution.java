@@ -136,6 +136,7 @@ Combining the above steps, the overall space complexity is O({M}^2 \times N)O(M
 Optimization: We can definitely reduce the space complexity of this algorithm by storing the indices corresponding to each word instead of storing the word itself.
  */
 public class Solution {
+
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
         // Since all words are of same length.
     int L = beginWord.length();
@@ -158,7 +159,7 @@ public class Solution {
 
     // Queue for BFS
     Queue<Pair<String, Integer>> Q = new LinkedList<>();
-    Q.add(new Pair(beginWord, 1));
+    Q.add(new Pair<>(beginWord, 1));
 
     // Visited to make sure we don't repeat processing same word.
     Map<String, Boolean> visited = new HashMap<>();
@@ -183,7 +184,7 @@ public class Solution {
           // Otherwise, add it to the BFS Queue. Also mark it visited
           if (!visited.containsKey(adjacentWord)) {
             visited.put(adjacentWord, true);
-            Q.add(new Pair(adjacentWord, level + 1));
+            Q.add(new Pair<>(adjacentWord, level + 1));
           }
         }
       }
