@@ -1,7 +1,6 @@
 package queue_reconstruction_by_height;
 
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 
