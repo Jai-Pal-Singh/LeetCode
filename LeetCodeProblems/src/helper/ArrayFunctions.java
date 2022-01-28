@@ -46,6 +46,12 @@ public class ArrayFunctions {
         }       
     }
 
+    public static void print(boolean[][] nums){
+        for (boolean[] num : nums) {
+            logger.log(Level.INFO, OUTPUT_STRING, Arrays.toString(num));
+        }       
+    }
+
     public static void printList(List<List<Integer>> nums) {
         for (List<Integer> num : nums) {
             print(num);
