@@ -25,6 +25,9 @@ Constraints:
 -104 <= nums[i] <= 104
  */
 
+ /**
+  * O(N lg N) running time + O(1) memory
+  */
 public class Solution {
     public int findKthLargest(int[] nums, int k) {
         Arrays.sort(nums);
