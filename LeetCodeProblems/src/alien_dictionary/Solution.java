@@ -9,16 +9,33 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Approach:
- * - build a set of all characters in words
- * - each pair of adjacent words (might) give a relation between two characters
- * - build a directed graph from these relations: x comes before y --> there is
- * a directed graph from x to y
- * - use topological sorting to order the graph nodes
- * - run DFS on the graph. when we're done with a node add it to the beginning
- * of a list
- * - the order of characters in the list is the alphabetical order
- * - note that nodes in this list will only have edges pointing "forward"
+ * Given a sorted dictionary (array of words) of an alien language, find order of characters in the language.
+
+Examples:  
+
+Input:  words[] = {"baa", "abcd", "abca", "cab", "cad"}
+Output: Order of characters is 'b', 'd', 'a', 'c'
+Note that words are sorted and in the given language "baa" 
+comes before "abcd", therefore 'b' is before 'a' in output.
+Similarly we can find other orders.
+
+Input:  words[] = {"caa", "aaa", "aab"}
+Output: Order of characters is 'c', 'a', 'b'
+ */
+
+
+/**
+  * Approach:
+     * - build a set of all characters in words
+     * - each pair of adjacent words (might) give a relation between two characters
+     *   -> build a directed graph from these relations: x comes before y --> there is a directed graph from x to y
+     * - use topological sorting to order the graph nodes
+     *   -> run DFS on the graph. when we're done with a node add it to the beginning of a list
+     *   -> the order of characters in the list is the alphabetical order
+     *     ->> note that nodes in this list will only have edges pointing "forward"
+ * 
+ * @Link: https://leetcode.com/discuss/interview-question/248131/microsoft-interview-round-1-alien-dictionary
+ * 
  */
 
 public class Solution {
@@ -27,12 +44,10 @@ public class Solution {
         if (sortedWords == null || sortedWords.length == 0) {
             return new char[0];
         }
-
         Set<Character> nodes = new HashSet<>();
         for (String w : sortedWords) {
             addChars(nodes, w);
         }
-
         // map from a node to all its neighbours = those it has edges to them
         // { a --> {b, c} } = edges are: a-->b and a-->c
         Map<Character, Set<Character>> outgoingEdges = new HashMap<>();
@@ -43,9 +58,7 @@ public class Solution {
                 addEdge(outgoingEdges, relation[0], relation[1]);
             }
         }
-
         List<Character> sortedChars = topologicalSort(nodes, outgoingEdges);
-
         char[] alphabet = new char[sortedChars.size()];
         int i = 0;
         for (char c : sortedChars) {
@@ -67,7 +80,8 @@ public class Solution {
     private char[] getRelation(String w1, String w2) {
         int len1 = w1.length();
         int len2 = w2.length();
-        for (int i = 0, len = Math.min(len1, len2); i < len; i++) {
+        int len = Math.min(len1, len2);
+        for (int i = 0 ; i < len; i++) {
             if (w1.charAt(i) != w2.charAt(i)) {
                 return new char[] { w1.charAt(i), w2.charAt(i) };
             }
