@@ -14,7 +14,9 @@ public class Node {
     public Node left;
     public Node right;
     public Node next;
+    public Node prev;
     public Node random;
+    public Node child;
 
     public Node() {
     }
