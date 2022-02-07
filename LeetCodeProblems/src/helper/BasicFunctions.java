@@ -17,6 +17,10 @@ public class BasicFunctions {
         logger.log(Level.INFO, OUTPUT_STRING, num);
     }
 
+    public static void print(char num){
+        logger.log(Level.INFO, OUTPUT_STRING, num);
+    }
+
     public static void print(double num){
         logger.log(Level.INFO, OUTPUT_STRING, num);
     }
