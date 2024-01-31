@@ -47,3 +47,25 @@ public class Solution {
 		return ans;
     }
 }
+
+
+public class Solution2 {
+	public List<String> letterCombinations(String digits) {
+        LinkedList<String> ans = new LinkedList<String>();
+		if(digits.isEmpty()) return ans;
+		String[] lookup = new String[] {"0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+		getCombinations(digits, lookup, ans, "");
+		return ans;
+    }
+
+    public void getCombinations(String digits, String[] lookup, LinkedList<String> ans, String temp){
+        if(temp.length() == digits.length()){
+            ans.add(temp);
+            return;
+        }
+        int n = temp.length();
+        for(char c : lookup[digits.charAt(n)-'0'].toCharArray()){
+            getCombinations(digits, lookup, ans, temp+c);
+        }
+    }
+}
